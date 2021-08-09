@@ -1,0 +1,19 @@
+.list {
+    padding-left: 0;
+    li {
+        padding: 3px;
+        list-style-type: none;
+        margin: 10px 4px;
+    }
+    & > li {
+        & > ul {
+            padding-left: 24px;
+            &.hide {
+                display: none;
+            }
+            &.show {
+                display: block;
+            }
+        }
+    }
+}
