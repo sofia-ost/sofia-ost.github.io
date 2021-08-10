@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const ListItem = ({items}) => {
+export const ListItem = ({items, nestedComponent}) => {
 
     const [showComponents, setShowComponents] = useState('');
 
@@ -25,7 +25,7 @@ export const ListItem = ({items}) => {
                             <li className="list-item" key={item.code} onClick={(event) => setStatus(item.code, event)}>
                                 {item.name}
                                 {showComponents === item.code &&
-                                    <ListItem items={item.languages} />
+                                    <ListItem items={item[nestedComponent]} nestedComponent="languages" />
                                 }
                             </li>
                         )
